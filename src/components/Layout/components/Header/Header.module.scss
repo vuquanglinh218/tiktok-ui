@@ -1,0 +1,109 @@
+.wrapper {
+  width: 100%;
+  height: var(--primary-default-layout-header-height);
+  box-shadow: 0px 1px 1px rgb(0 0 0 / 12%);
+  display: flex;
+  justify-content: center;
+}
+
+.inner {
+  width: var(--primary-default-layout-width);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: var(--primary-default-layout-header-height);
+  img {
+    height: var(--primary-default-layout-header-height);
+    width: 120px;
+    object-fit: contain;
+  }
+}
+
+.search,
+.search-result {
+  width: 361px;
+}
+
+.search {
+  --width-search-btn: 52px;
+  display: flex;
+  height: 46px;
+  background-color: rgba(22, 24, 35, 0.06);
+  border-radius: 92px;
+  position: relative;
+  outline: 1px solid rgba(22, 24, 35, 0.06);
+  &:focus-within {
+    outline: 1px solid #c5c6c9;
+  }
+
+  .input {
+    margin-left: 23px;
+    font-size: 1.6rem;
+    flex: 1;
+    background-color: transparent;
+    border: none;
+    outline: none;
+  }
+
+  .input:not(:placeholder-shown) ~ .search-btn {
+    color: #4c4e57;
+  }
+
+  .clear {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: calc(var(--width-search-btn) + 10px);
+    display: flex;
+    align-items: center;
+    color: rgba(22, 24, 35, 0.34);
+    display: none;
+    .clear-icon {
+      position: absolute;
+    }
+  }
+
+  .search-btn {
+    width: var(--width-search-btn);
+    border: none;
+    outline: none;
+    border-radius: 0 92px 92px 0;
+    position: relative;
+    color: rgba(22, 24, 35, 0.12);
+    font-size: 2.2rem;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 1px;
+      height: 30px;
+      background-color: rgba(22, 24, 35, 0.12);
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:hover {
+      background-color: rgba(22, 24, 35, 0.03);
+    }
+
+    &:active {
+      background-color: rgba(22, 24, 35, 0.06);
+    }
+  }
+}
+
+.search-title {
+  height: 30px;
+  padding: 5px 12px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: rgba(22, 24, 35, 0.5);
+}
